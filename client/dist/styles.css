@@ -1,17 +1,19 @@
 body {
   font-family: "Helvetica Nue", Helvetica, sans-serif;
-  color: #333;
+  color: white !important;
+  background-color: black !important;
 }
 
 h2 {
   word-wrap: break-word !important;
   word-break: break-word !important;
   overflow-wrap: break-word !important;
+  text-align: center !important;
   font-weight: bold;
   margin-bottom: 6px;
   font-size: 21px;
   line-height: 1.28571em;
-  color: #d32323;
+  color: #5cb85c;
 }
 
 h2 b {
@@ -34,18 +36,7 @@ a:hover {
   align-items:'center';
 }
 
-#search {
-  display: inline-block;
-  vertical-align: middle;
-  line-height: normal;
-}
-
-#new_review {
-  background-color: #e6e6e6;
-  text-align: center;
-  display: inline-block;
-}
-
-#yelp_logo{
-  color: #d32323;   
+.carousel-control-next,
+.carousel-control-prev {
+    filter: invert(100%) !important;
 }
