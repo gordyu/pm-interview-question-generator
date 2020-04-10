@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
-const RFeedback = (props) => {
+function RFeedback(props) {
   return (
     <Form>
       <h2>Feedback</h2>

@@ -31,7 +31,7 @@ const items = [
   }
 ];
 
-const Ambassadors = (props) => {
+function Ambassadors(props) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
 

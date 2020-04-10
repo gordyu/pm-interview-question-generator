@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
-const Example = (props) => {
+function Example(props) {
   return (
     <Form>
       <h2>Feedback required for certificate</h2>

@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGlobe, faBookOpen } from '@fortawesome/free-solid-svg-icons';
 import { faRedditAlien } from '@fortawesome/free-brands-svg-icons';
 
-const FAQ = (props) => {
+function FAQ(props) {
 
   function handleClickAWIP(e) {
     window.open("https://advancingwomeninproduct.org");

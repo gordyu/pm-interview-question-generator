@@ -5,7 +5,7 @@ import { faGooglePlusG } from "@fortawesome/free-brands-svg-icons";
 
 const icon = <FontAwesomeIcon icon={ faGooglePlusG } />;
 
-export default class Trust extends React.Component {
+class Trust extends React.Component {
   constructor(props) {
     super(props);
 
@@ -29,3 +29,5 @@ export default class Trust extends React.Component {
     );
   }
 }
+
+export default Trust;

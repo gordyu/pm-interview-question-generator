@@ -69,9 +69,8 @@ class Home extends React.Component {
           </Route>
           <Route path='/'>
             <div className='home'>
-              { console.log('at fresh load, this is', this) };
+              { console.log('at fresh load, this is', this) }
               <Trust />
-              <Button onClick={()=>this.setState({ permissions: 'interviewer' })}/>
               <Jumbo />
               <span style={{display: 'flex', justifyContent: 'center'}}>
                 <GoogleLogin
