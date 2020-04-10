@@ -1,8 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from "react";
 import ReactDOM from "react-dom";
-import { Container, Row, Col } from "reactstrap";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Container, Row, Col, Button } from "reactstrap";
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 /* Home Libraries */
 import GoogleLogin from 'react-google-login';
 import Trust from "./home/trust.jsx";
@@ -17,30 +17,27 @@ import RFeedback from "./meeting/rFeedback.jsx";
 import EFeedback from "./meeting/eFeedback.jsx";
 import Resume from "./meeting/resume.jsx";
 
-const errorGoogle = (error) => {
-  // console.log(this);
+function errorGoogle(error) {
   console.log('Google login failed with error', error);
 }
 
-const responseGoogle = (response) => {
+function responseGoogle(response) {
   if (response === null) return;
   else {
-    // Console logging Google's response
-    // response = JSON.stringify(response);
-    console.log('responseGoogle this is', this);
-    // console.log('Google profile is', response["profileObj"]);
+    //console.log('responseGoogle this is', this);
     var profile = response["profileObj"];
     var email = profile["email"];
-    console.log('Google email is', email);
-    // React Router
+    //console.log('Google email is', email);
     if (email.includes('@advancingwomeninproduct.org')) {
       this.setState({ permissions: 'interviewer' });
+      this.setState({ redirect: 'dashboard' });
       console.log('hello interviewer!');
     }
     else {
       this.setState({ permissions: 'interviewee' });
+      this.setState({ redirect: 'dashboard' });
       console.log('hello interviewee!');
-    } 
+    }
   }
 }
 
@@ -48,32 +45,33 @@ class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = { 
-      permissions: 'none' 
+      permissions: 'none',
+      redirect: 'none'
     }; 
-    /* Following code creates error: Cannot read property 'bind' of undefined (the first this causes error)
-    this.GoogleLogin = this.GoogleLogin.bind(this);
-    this.responseGoogle = this.responseGoogle.bind(this);
-    */
   }
- 
-  render(){
+
+  render() {
     return (
       <Router>
+         { this.state.redirect === 'dashboard' ? <Redirect to='/dashboard' /> :
+            this.state.redirect === 'meeting' ? <Redirect to='/meeting' /> :
+              <Redirect to='/' /> }
         <Switch>
-          <Route path="/dashboard">
-            { this.state.permissions === 'none' ? <Home /> :
-                this.state.permissions === 'interviewee' ? <EDashboard /> : 
-                  <RDashboard /> }
+          <Route path='/dashboard'>
+            { this.state.permissions === 'interviewee' ? <EDashboard /> :
+                this.state.permissions == 'interviewer' ? <RDashboard /> :
+                  <Home /> }
           </Route>
-          <Route path="/meeting">
-            { this.state.permissions === 'none' ? <Home /> :
-                this.state.permissions === 'interviewee' ? <RMeeting /> : 
-                  <RMeeting /> }  
+          <Route path='/meeting'>
+            { this.state.permissions === 'interviewee' ? <EMeeting /> :
+                this.state.permissions === 'interviewer' ? <RMeeting /> :
+                  <Home /> } 
           </Route>
-          <Route path="/">
-            <div className="home">
+          <Route path='/'>
+            <div className='home'>
               { console.log('at fresh load, this is', this) };
               <Trust />
+              <Button onClick={()=>this.setState({ permissions: 'interviewer' })}/>
               <Jumbo />
               <span style={{display: 'flex', justifyContent: 'center'}}>
                 <GoogleLogin
@@ -83,12 +81,8 @@ class Home extends React.Component {
                   cookiePolicy={'single_host_origin'}
                   // Per https://stackoverflow.com/questions/51984016/react-google-login and https://stackoverflow.com/questions/44291806/trouble-accessing-props-in-callback-function-of-google-login-using-react-google
                   // Causes error 'Cannot read property 'bind' of undefined', meaning 'this' here is undefined
-                  onSuccess={() => this.responseGoogle}
-                  onFailure={() => this.errorGoogle}
-                  /* Previous Pra direction
                   onSuccess={responseGoogle.bind(this)}
                   onFailure={errorGoogle.bind(this)}
-                  */
                 />
               </span>
               <br />
