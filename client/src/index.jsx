@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from "react";
 import ReactDOM from "react-dom";
-import { Container, Row, Col, Button } from "reactstrap";
+import { Container, Row, Col } from "reactstrap";
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 /* Home Libraries */
 import GoogleLogin from 'react-google-login';
@@ -25,8 +25,8 @@ function responseGoogle(response) {
   if (response === null) return;
   else {
     //console.log('responseGoogle this is', this);
-    var profile = response["profileObj"];
-    var email = profile["email"];
+    let profile = response["profileObj"];
+    let email = profile["email"];
     //console.log('Google email is', email);
     if (email.includes('@advancingwomeninproduct.org')) {
       this.setState({ permissions: 'interviewer' });
@@ -69,7 +69,7 @@ class Home extends React.Component {
           </Route>
           <Route path='/'>
             <div className='home'>
-              { console.log('at fresh load, this is', this) }
+              { /* console.log('at fresh load, this is', this) */ }
               <Trust />
               <Jumbo />
               <span style={{display: 'flex', justifyContent: 'center'}}>
