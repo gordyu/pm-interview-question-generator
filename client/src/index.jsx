@@ -29,12 +29,12 @@ function responseGoogle(response) {
     //console.log('Google email is', email);
     if (email.includes('@advancingwomeninproduct.org')) {
       this.setState({ permissions: 'interviewer' });
-      this.setState({ redirect: 'dashboard' });
+      this.setState({ redirect: 'schedule' });
       console.log('hello interviewer!');
     }
     else {
       this.setState({ permissions: 'interviewee' });
-      this.setState({ redirect: 'dashboard' });
+      this.setState({ redirect: 'schedule' });
       console.log('hello interviewee!');
     }
   }
@@ -52,18 +52,18 @@ class Home extends React.Component {
   render() {
     return (
       <Router>
-         { this.state.redirect === 'dashboard' ? <Redirect to='/dashboard' /> :
-            this.state.redirect === 'meeting' ? <Redirect to='/meeting' /> :
+         { this.state.redirect === 'schedule' ? <Redirect to='/schedule' /> :
+            this.state.redirect === 'interview' ? <Redirect to='/meeting' /> :
               <Redirect to='/' /> }
         <Switch>
-          <Route path='/dashboard'>
-            { this.state.permissions === 'interviewee' ? <EDashboard /> :
-                this.state.permissions == 'interviewer' ? <RDashboard /> :
+          <Route path='/schedule'>
+            { this.state.permissions === 'interviewee' ? <ESchedule /> :
+                this.state.permissions == 'interviewer' ? <RSchedule /> :
                   <Home /> }
           </Route>
-          <Route path='/meeting'>
-            { this.state.permissions === 'interviewee' ? <EMeeting /> :
-                this.state.permissions === 'interviewer' ? <RMeeting /> :
+          <Route path='/interview'>
+            { this.state.permissions === 'interviewee' ? <EInterview /> :
+                this.state.permissions === 'interviewer' ? <RInterview /> :
                   <Home /> } 
           </Route>
           <Route path='/'>
