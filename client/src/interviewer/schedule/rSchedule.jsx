@@ -1,3 +1,4 @@
+import React from 'react';
 import RCalendar from './rCalendar.jsx';
 
 class RSchedule extends React.Component {

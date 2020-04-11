@@ -1,3 +1,4 @@
+import React from 'react';
 import Trust from '../../home/trust.jsx';
 import UploadResume from './uploadResume.jsx';
 import ECalendar from './eCalendar.jsx';

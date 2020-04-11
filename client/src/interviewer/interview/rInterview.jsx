@@ -1,3 +1,4 @@
+import React from 'react';
 import RFeedback from './rFeedback.jsx';
 import ShowResume from './showResume.jsx';
 
