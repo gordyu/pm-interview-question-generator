@@ -1,9 +1,8 @@
-// import 'bootstrap/dist/css/bootstrap.min.css';
 import React from "react";
 import ReactDOM from "react-dom";
 import { Container, Row, Col } from "reactstrap";
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
-/* Local Imports */
+/* Imports to index.jsx */
 import GoogleLogin from 'react-google-login';
 import Trust from "./home/trust.jsx";
 import Jumbo from "./home/jumbotron.jsx";
