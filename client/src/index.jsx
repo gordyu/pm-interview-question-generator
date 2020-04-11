@@ -1,4 +1,4 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import React from "react";
 import ReactDOM from "react-dom";
 import { Container, Row, Col } from "reactstrap";
@@ -9,10 +9,10 @@ import Trust from "./home/trust.jsx";
 import Jumbo from "./home/jumbotron.jsx";
 import Ambassadors from "./home/carousel.jsx";
 import FAQ from "./home/FAQ.jsx";
-/* 1. Schedule the Meeting */
+/* Step 1. Schedule the Meeting */
 import ESchedule from "./interviewee/schedule/eSchedule.jsx";
 import RSchedule from "./interviewer/schedule/rSchedule.jsx";
-/* 2. Have the Interview */
+/* Step 2. Show up for the Interview */
 import EInterview from "./interviewee/interview/eInterview.jsx";
 import RInterview from "./interviewer/interview/rInterview.jsx";
 
@@ -28,14 +28,14 @@ function responseGoogle(response) {
     let email = profile["email"];
     //console.log('Google email is', email);
     if (email.includes('@advancingwomeninproduct.org')) {
-      this.setState({ permissions: 'interviewer' });
-      this.setState({ redirect: 'schedule' });
-      console.log('hello interviewer!');
+      this.setState({ permissions: 'interviewer',
+                      redirect: 'schedule' });
+      //console.log('hello interviewer!');
     }
     else {
-      this.setState({ permissions: 'interviewee' });
-      this.setState({ redirect: 'schedule' });
-      console.log('hello interviewee!');
+      this.setState({ permissions: 'interviewee',
+                      redirect: 'schedule' });
+      //console.log('hello interviewee!');
     }
   }
 }
@@ -115,7 +115,7 @@ class Home extends React.Component {
               </Container>
               <br />
               <h2>
-                FAQ
+                Frequently Asked Questions
               </h2>
               <FAQ />
               <br />
