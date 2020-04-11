@@ -1,4 +1,4 @@
-import react from 'react';
+import React from 'react';
 import EFeedback from "./eFeedback.jsx";
 
 class EInterview extends React.Component {
