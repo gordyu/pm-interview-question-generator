@@ -1,9 +1,10 @@
 import React from 'react';
 import Iframe from 'react-iframe';
 
-const RCalendar = (props) => {
+{ /* TODO: Enable scheduling on this calendar */ }
+function rCalendar(props) {
   return (
-    <Iframe url="https://calendar.google.com/calendar/selfsched?sstoken=UUZRckhfdFU4RHJzfGRlZmF1bHR8ZjUxNDVjYzZkMWU3NGE2NzA2ZjZiZjZmY2FmMDVmMTY"
+      <Iframe url="https://calendar.google.com/calendar/selfsched?sstoken=UUZRckhfdFU4RHJzfGRlZmF1bHR8ZjUxNDVjYzZkMWU3NGE2NzA2ZjZiZjZmY2FmMDVmMTY"
         width="800px"
         height="600px"
         id="calendar"
@@ -14,4 +15,4 @@ const RCalendar = (props) => {
   );
 }
 
-export default RCalendar;
+export default rCalendar;

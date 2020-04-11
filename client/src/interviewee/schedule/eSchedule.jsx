@@ -1,6 +1,6 @@
 import Trust from '../../home/trust.jsx';
 import UploadResume from './uploadResume.jsx';
-import ECalendar from './eCalender.js';
+import ECalendar from './eCalendar.jsx';
 
 class ESchedule extends React.Component {
     render() {

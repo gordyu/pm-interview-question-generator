@@ -1,7 +1,7 @@
 import React from 'react';
 import { PDFReader } from 'reactjs-pdf-reader';
  
-function ShowResume(props) {
+function showResume(props) {
   return (
     <div style={{ overflow:'scroll', height:"600" }}>
       <PDFReader url="./resumes/gordon.pdf" scale="1.2"/>
@@ -9,4 +9,4 @@ function ShowResume(props) {
   );
 };
  
-export default ShowResume;
+export default showResume;

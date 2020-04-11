@@ -1,4 +1,3 @@
-import Trust from '../../home/trust.jsx';
 import RCalendar from './rCalendar.jsx';
 
 class RSchedule extends React.Component {
