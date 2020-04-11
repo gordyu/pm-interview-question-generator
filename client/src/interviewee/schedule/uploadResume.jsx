@@ -3,7 +3,7 @@ import { Button, Form, FormGroup, Label, Input, FormText, Col } from 'reactstrap
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFileUpload } from '@fortawesome/free-solid-svg-icons';
 
-function uploadResume(props) {
+function uploadResume() {
   return (
     <div style={{display: 'flex', justifyContent: 'center'}}>
       <Form>

@@ -2,7 +2,7 @@ import React from 'react';
 import Iframe from 'react-iframe';
 
 { /* TODO: Enable scheduling on this calendar */ }
-function rCalendar(props) {
+function rCalendar() {
   return (
       <Iframe url="https://calendar.google.com/calendar/selfsched?sstoken=UUZRckhfdFU4RHJzfGRlZmF1bHR8ZjUxNDVjYzZkMWU3NGE2NzA2ZjZiZjZmY2FmMDVmMTY"
         width="800px"
