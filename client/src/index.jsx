@@ -3,19 +3,18 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Container, Row, Col } from "reactstrap";
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
-/* Home Libraries */
+/* Local Imports */
 import GoogleLogin from 'react-google-login';
 import Trust from "./home/trust.jsx";
 import Jumbo from "./home/jumbotron.jsx";
 import Ambassadors from "./home/carousel.jsx";
 import FAQ from "./home/FAQ.jsx";
-/* Dashboard Libraries */
-import UploadResume from "./dashboard/uploadResume.jsx";
-import Schedule from "./dashboard/schedule.jsx";
-/* Meeting Libraries */
-import RFeedback from "./meeting/rFeedback.jsx";
-import EFeedback from "./meeting/eFeedback.jsx";
-import Resume from "./meeting/resume.jsx";
+/* 1. Schedule the Meeting */
+import ESchedule from "./interviewee/schedule/eSchedule.jsx";
+import RSchedule from "./interviewer/schedule/rSchedule.jsx";
+/* 2. Have the Interview */
+import EInterview from "./interviewee/interview/eInterview.jsx";
+import RInterview from "./interviewer/interview/rInterview.jsx";
 
 function errorGoogle(error) {
   console.log('Google login failed with error', error);
@@ -125,100 +124,6 @@ class Home extends React.Component {
           </Route>
         </Switch> 
       </Router>
-    );
-  }
-}
-
-class EDashboard extends React.Component {
-  render() {
-    return(  
-      <div className="interviewee-dashboard">
-        <Trust />
-        <h2>
-          Step 1 of 2: Upload your resume
-        </h2>
-        <UploadResume />
-        <br />
-        <h2>
-          Step 2 of 2: Schedule your interview
-        </h2>
-        <span style={{display: 'flex', justifyContent: 'center', alignItems: "center", padding: "0"}}>
-          <Schedule />
-        </span>
-      </div>
-    );
-  }
-}
-
-class RDashboard extends React.Component {
-  render() {
-    return(  
-      <div className="interviewer-dashboard">
-        <Trust />
-        <h2>
-          Setup Step 1 of 2: Upload your resume
-        </h2>
-        <UploadResume />
-        <br />
-        <h2>
-          Setup Step 2 of 2: Schedule your interview
-        </h2>
-        <span style={{display: 'flex', justifyContent: 'center', alignItems: "center", padding: "0"}}>
-          <Schedule />
-        </span>
-      </div>
-    );
-  }
-}
-
-class EMeeting extends React.Component {
-  render() {
-    return(
-      <div className="interviewee-meeting">
-        <Container>
-          <Row>
-          <Col xs="9">
-            <h2>Interview Room</h2>
-            <div className="iframe-container" style={{overflow: "hidden", paddingTop: "56.25%", position: "relative"}}>
-              <iframe allow="microphone; camera" style={{border: "0", height: "100%", left: "0", position: "absolute", top: "0", width: "100%"}} 
-                src="https://success.zoom.us/wc/join/2128331552" frameBorder="0"></iframe>
-            </div>
-            <br />
-            <h2>Your Resume</h2>
-            <Resume />
-          </Col>
-          <Col xs="3">
-            <EFeedback />
-          </Col>
-          </Row>
-        </Container>
-      </div>
-    );
-  }
-}
-
-class RMeeting extends React.Component {
-  render() {
-    return(
-      <div className="interviewer-meeting">
-        <Container>
-          <Row>
-          <Col xs="9">
-            <h2>Interview Room</h2>
-            <div className="iframe-container" style={{overflow: "hidden", paddingTop: "56.25%", position: "relative"}}>
-              <iframe allow="microphone; camera" style={{border: "0", height: "100%", left: "0", position: "absolute", top: "0", width: "100%"}} 
-                src="https://success.zoom.us/wc/join/2128331552" frameBorder="0"></iframe>
-            </div>
-            <br />
-            <h2>Interviewee's Resume</h2>
-            <Resume />
-          </Col>
-          <Col xs="3">
-            <RFeedback />
-          </Col>
-          </Row>
-        </Container>
-      </div>
     );
   }
 }
