@@ -52,7 +52,7 @@ class Home extends React.Component {
     return (
       <Router>
          { this.state.redirect === 'schedule' ? <Redirect to='/schedule' /> :
-            this.state.redirect === 'interview' ? <Redirect to='/meeting' /> :
+            this.state.redirect === 'interview' ? <Redirect to='/interview' /> :
               <Redirect to='/' /> }
         <Switch>
           <Route path='/schedule'>
