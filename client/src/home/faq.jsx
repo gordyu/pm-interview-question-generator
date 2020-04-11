@@ -99,7 +99,7 @@ function FAQ() {
           <CardTitle>How Should I Prepare?</CardTitle>
           <CardText>
             There are so many resources online for program manager interviews that finding the best sources can be difficult.
-            AWIP works on this issue with its original programming. To follow this programming, join AWIP at the location below.
+            AWIP works on this issue with its original programming. To follow this programming, join AWIP from its official website.
           </CardText>
           <div style={{display: 'flex', justifyContent: 'center'}}>
             <Button onClick={handleClickAWIP}>

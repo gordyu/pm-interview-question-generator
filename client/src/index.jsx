@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-d
 /* Imports to index.jsx */
 import GoogleLogin from 'react-google-login';
 import Trust from "./home/trust.jsx";
-import Jumbo from "./home/jumbotron.jsx";
+import Banner from "./home/banner.jsx";
 import Ambassadors from "./home/carousel.jsx";
 import FAQ from "./home/FAQ.jsx";
 /* Step 1. Schedule the Meeting */
@@ -69,7 +69,7 @@ class Home extends React.Component {
             <div className='home'>
               { /* console.log('at fresh load, this is', this) */ }
               <Trust />
-              <Jumbo />
+              <Banner />
               <span style={{display: 'flex', justifyContent: 'center'}}>
                 <GoogleLogin
                   clientId="967595854678-5hfgveg74mdslobjc9ggvvlupeds8vmr.apps.googleusercontent.com"
