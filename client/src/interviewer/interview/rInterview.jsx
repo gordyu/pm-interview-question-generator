@@ -1,4 +1,5 @@
 import React from 'react';
+import { Container, Row, Col } from "reactstrap";
 import RFeedback from './rFeedback.jsx';
 import ShowResume from './showResume.jsx';
 

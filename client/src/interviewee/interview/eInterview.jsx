@@ -1,5 +1,7 @@
 import React from 'react';
+import { Container, Row, Col } from "reactstrap";
 import EFeedback from "./eFeedback.jsx";
+import ShowResume from '../../interviewer/interview/showResume.jsx';
 
 class EInterview extends React.Component {
   render() {
@@ -15,7 +17,7 @@ class EInterview extends React.Component {
             </div>
             <br />
             <h2>Your Resume</h2>
-            <UploadResume />
+            <ShowResume />
           </Col>
           <Col xs="3">
             <EFeedback />

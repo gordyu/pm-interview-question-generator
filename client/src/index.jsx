@@ -28,12 +28,12 @@ function responseGoogle(response) {
     //console.log('Google email is', email);
     if (email.includes('@advancingwomeninproduct.org')) {
       this.setState({ permissions: 'interviewer',
-                      redirect: 'schedule' });
+                      redirect: 'interview' });
       //console.log('hello interviewer!');
     }
     else {
       this.setState({ permissions: 'interviewee',
-                      redirect: 'schedule' });
+                      redirect: 'interview' });
       //console.log('hello interviewee!');
     }
   }
