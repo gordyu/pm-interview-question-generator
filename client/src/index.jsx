@@ -13,7 +13,15 @@ class Home extends React.Component {
 
   async componentDidMount() {
     const res = await fetch("http://localhost:5000/");
-    this.setState.product = res[0];
+    this.setState({ product: res[0] });
+    this.setState({ customer: res[1] });
+    this.setState({ amazon: res[2] });
+    this.setState({ facebook: res[3] });
+    this.setState({ microsoft: res[4] });
+    this.setState({ google: res[5] });
+    this.setState({ facebookPercent: res[6] });
+    this.setState({ facebookPerson: res[7] });
+    this.setState({ microsoftPerson: res[8] });
   }
 
   render() {
@@ -22,15 +30,15 @@ class Home extends React.Component {
         <h1>PM Interviews Against Humanity</h1>
         <p>Using the first 200 Cards Against Humanity White Cards</p>
         <h2>Universal PM Interview Question</h2>
-        <p>Design a {this.state.product} for {this.state.customer}.</p>
+        <p>{`Design a ${this.state.product} for ${this.state.customer}`}.</p>
         <h2>Amazon Interview Quesiton</h2>
-        <p>Tell me about a time when you {this.state.amazon}.</p>
+        <p>{`Tell me about a time when you ${this.state.amazon}.`}</p>
         <h2>Facebook Interview Question</h2>
-        <p>Usage of {this.state.facebook} is down {Math.floor(Math.Random()*(20-10+1))+10}%. How would you explain this to Mark Zuckerberg?</p>
+        <p>{`Usage of ${this.state.facebook} is down ${this.state.facebookPercent}%. How would you explain this to Mark Zuckerberg?`}</p>
         <h2>Microsoft Interview Question</h2>
-        <p></p>
-        <h2>Google Interviews Question</h2>
-        <p>Solve {this.state.google}.</p>
+        <p>{`Explain ${this.state.microsoft} to ${this.state.microsoftPerson}.`}</p>
+        <h2>Google Interview Question</h2>
+        <p>{`Solve ${this.state.google}.`}</p>
         <button>Again!</button>
       </div>
     );

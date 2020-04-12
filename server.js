@@ -32,7 +32,7 @@ app.get('*', function(req, res) {
   let i = 0;
   for (let key in data) {
       console.log('searching', data[key]);
-      i = (Math.floor(Math.random() * Math.floor(data[key].length-1)));
+      i = (Math.floor(Math.random() * (data[key].length)));
       terms.push(data[key][i]);
       console.log('term is', data[key][i]);
   };
