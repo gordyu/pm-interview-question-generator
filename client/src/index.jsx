@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import regeneratorRuntime from "regenerator-runtime"; //enables async. Do not remove.
-let res;
 
 class Home extends React.Component {
   constructor(props) {
@@ -13,7 +12,7 @@ class Home extends React.Component {
   }
 
   async componentDidMount() {
-    res = await fetch(`http://localhost:5000/random`)
+    const res = await fetch(`http://localhost:5000/random`)
       .then(res => res.json())
       .then(res => {
         //console.log('Got this from the server', res);
@@ -35,28 +34,29 @@ class Home extends React.Component {
     return (
       <div>
         <h1>PM Interviews Against Humanity</h1>
-        <p>Using the first 200  white cards from Cards Against Humanity&trade;</p>
-        <div>
+        <p>Inspired by the first 200 white cards from Cards Against Humanity&trade;</p>
+        <button>Gimme More Questions!</button>
+        <div className='question'>
           <h2>Universal PM Interview Question</h2>
-          <p>{`Design the ${this.state.product} for ${this.state.customer}`}.</p>
+          <p>{`Design ${this.state.product} for ${this.state.customer}`}.</p>
         </div>
-        <div>
-          <h2>Amazon Interview Quesiton</h2>
-          <p>{`Tell me about a time when you ${this.state.amazon}.`}</p>
+        <div className='question'>
+          <h2>Amazon Interview Question</h2>
+          <p>{`Tell me about a time when you were ${this.state.amazon}.`}</p>
         </div>
-        <div>
+        <div className='question'>
           <h2>Facebook Interview Question</h2>
-          <p>{`Usage of ${this.state.facebook} is down ${this.state.facebookPercent}%. How would you explain this to Mark Zuckerberg?`}</p>
+          <p>{`Rates for ${this.state.facebook} are down ${this.state.facebookPercent}%.`}</p>
+          <p>{`How would you explain this to ${this.state.facebookPerson}?`}</p>
         </div>
-        <div>
+        <div className='question'>
           <h2>Microsoft Interview Question</h2>
           <p>{`Explain ${this.state.microsoft} to ${this.state.microsoftPerson}.`}</p>
         </div>
-        <div>
+        <div className='question'>
           <h2>Google Interview Question</h2>
           <p>{`Solve ${this.state.google}.`}</p>
         </div>
-        <button>Again!</button>
       </div>
     );
   }
