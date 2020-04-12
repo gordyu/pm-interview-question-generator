@@ -1,20 +1,8 @@
-require('dotenv').config();
 const express = require('express');
-//const awip2 = require('./database/index.js');
 const app = express();
+require('dotenv').config();
 const port = process.env.PORT;
-const { GraphQLServer } = require('graphql-yoga');
-const mongoose = require('mongoose');
-mongoose.set('useNewUrlParser', true);
-mongoose.set('useUnifiedTopology', true);
-const db = mongoose.connect('mongodb://localhost:27017/population');
-const Schema = mongoose.Schema;
-const peopleSchema = new Schema({
-  first: { type: String },
-  last: { type: String }
-});
-const People = mongoose.model('people', peopleSchema);
-const first200 = {
+const data = {
   "amazon":["doing the wrong thing","concealing a boner","being marginalized","cuddling","laying an egg","praying the gay away","cheating in the Special Olympics","bingeing and purging","making a pouty face","dying","pretending to care","being a dick to children","sniffing glue","eating all of the cookies before the AIDS bake-sale","sharing needles","farting and walking away","leaving an awkward voicemail","teaching a robot to love","scrubbing under the folds","whipping it out","waiting 'til marriage","feeding Rosie O'Donnell","taking off your shirt","pooping back and forth","being a motherfucking sorcerer","pulling out","waking up half-naked in a Denny's parking lot","eating the last known bison","dropping a chandelier on your enemies and riding the rope up","licking things to claim them as your own"],
   "facebook":["coat hanger abortions","the violation of our most basic human rights","self-loathing","fingering","ethnic cleansing","heteronormativity","object permanence","foreskin","dying of dysentery","necrophilia","spontaneous human combustion","penis envy","panda sex","masturbation","natural selection","take-backsies","drinking alone","giving 110%","fiery poops","passive-agression","vehicular manslaughter","scalping"],
   "google":["the Big Bang","fear itself","AIDS","land mines","old-people smell","the Rapture","the American Dream","the inevitable heat death of the universe","the folly of man","a time travel paradox","world peace"],
@@ -31,93 +19,20 @@ app.use(function(req, res, next) {
 app.use(express.static(__dirname + '/client/dist'));
 
 app.listen(port, function() {
-  console.log(`AWIPByte is listening on port ${port}`);
+  console.log(`PM Interviews Against Humanity is listening on port ${port}`);
 });
 
-/* GraphQL with Mongoose Setup */
-const typeDefs = `
-type Query {
-  People: [PeopleObject]!
-  Greeting: String
-}
-type PeopleObject {
-  id: ID
-  first: String!
-  last: String!
-}
-type Mutation {
-  createPerson(first: String!, last: String!): PeopleObject
-  deletePerson(id: ID!): PeopleObject
-}
-`
-const resolvers = {
-  Query: {
-    Greeting: () => `Hello World`,
-    People: () => People.find({})
-  },
-  Mutation: {
-    createPerson: async (parent, args) => {
-      const newPerson = new People({
-        first: args.first,
-        last: args.last
-      })
-      const error = await newPerson.save()
-      if (error) return error
-      return newPerson
-    },
-    deletePerson: (parent, args) => {
-      return new Promise( (resolve, reject) => {
-        People.findOneAndDelete(args.id, function(err, result){
-          if (err) return err;
-          resolve (result);
-        })
-      })
-    }
-  }
-}
-const server = new GraphQLServer({
-  typeDefs,
-  resolvers
-})
-
-server.start({port: 7002}, () => console.log(`GraphQL is running on port 7002`));
-
-/* MongoDB routes */
-/*
-app.get('/login', (req, res) => {
-  awip2.findOne({ rEmail : "gordon@advancingwomeninproduct.org" }, (err, result) => {
-    if (err) {
-      console.log('GET lowest rated triggered ERROR', err);
-      callback(err, null);
-    }
-    // if (!result) { EMAIL NOT FOUND; STORE DATA IN PROPS FOR SCHEDULING MEETING }
-    else {
-      res.status(200).send(result);
-      console.log('An interviewer has logged on');
-    }
-  });
+// GET home page.
+app.get('*', function(req, res) {
+  // redeclare vars if they have data already
+  let terms = []; 
+  let i = 0;
+  for (let key in data) {
+      console.log('searching', data[key]);
+      i = (Math.floor(Math.random() * Math.floor(data[key].length-1)));
+      terms.push(data[key][i]);
+      console.log('term is', data[key][i]);
+  };
+  console.log('Sending these terms', terms);
+  res.status(200).send(terms);
 });
-
-app.get('/available', (req, res) => {
-  awip2.find({ start : { $exists: true }, eEmail : { $exists: false }}, (err, result) => {
-    if (err) {
-      console.log('GET lowest rated triggered ERROR', err);
-      callback(err, null);
-    }
-    if (!results.length) {
-      console.log('Our apologies, no interview slots are currently available');
-    } 
-    else {
-      res.status(200).send(result);
-      console.log('One or more interviews were located');
-    }
-  });
-});
-*/
-
-//app.get (interviewer's own meetings)
-
-//app.post (interviewer can schedule more interviews)
-
-//app.post (interviewee takes an interview spot)
-
