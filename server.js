@@ -8,7 +8,10 @@ const data = {
   "amazon":["doing the wrong thing","concealing a boner","being marginalized","cuddling","laying an egg","praying the gay away","cheating in the Special Olympics","bingeing and purging","making a pouty face","dying","pretending to care","being a dick to children","sniffing glue","eating all of the cookies before the AIDS bake-sale","sharing needles","farting and walking away","leaving an awkward voicemail","teaching a robot to love","scrubbing under the folds","whipping it out","waiting 'til marriage","feeding Rosie O'Donnell","taking off your shirt","pooping back and forth","being a motherfucking sorcerer","pulling out","waking up half-naked in a Denny's parking lot","eating the last known bison","dropping a chandelier on your enemies and riding the rope up","licking things to claim them as your own"],
   "facebook":["coat hanger abortions","the violation of our most basic human rights","self-loathing","fingering","ethnic cleansing","heteronormativity","object permanence","foreskin","dying of dysentery","necrophilia","spontaneous human combustion","penis envy","panda sex","masturbation","natural selection","take-backsies","drinking alone","giving 110%","fiery poops","passive-agression","vehicular manslaughter","scalping"],
   "google":["the Big Bang","fear itself","AIDS","land mines","old-people smell","the Rapture","the American Dream","the inevitable heat death of the universe","the folly of man","a time travel paradox","world peace"],
-  "microsoft":["man meat","autocannibalism","smegma","science","stranger danger","the Three-Fifths compromise","being rich","figgy pudding","preteens","Toni Morrison's vagina","friction","picking up girls at the abortion clinic","daddy issues","testicular torsion"]
+  "microsoft":["man meat","autocannibalism","smegma","science","stranger danger","the Three-Fifths compromise","being rich","figgy pudding","preteens","Toni Morrison's vagina","friction","picking up girls at the abortion clinic","daddy issues","testicular torsion"],
+  "facebookPercent":[10,15,20,25,30,35,40,45,50],
+  "facebookPerson":["Mark Zuckerberg","Sheryl Sandberg"],
+  "microsoftPerson":["a 7-year-old","my grandmother"]
 };
 
 app.use(function(req, res, next) {
