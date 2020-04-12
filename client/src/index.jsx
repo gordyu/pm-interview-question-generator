@@ -9,7 +9,8 @@ class Home extends React.Component {
     super(props);
     this.state = { 
       product: '', customer: '', amazon: '', facebook: '', microsoft: '', google: '',
-      facebookPercent: '', facebookPerson: '', microsoftPerson: ''
+      facebookPercent: '', facebookPerson: '', microsoftPerson: '',
+      ready: true
     }; 
   }
 
@@ -35,7 +36,7 @@ class Home extends React.Component {
       <div>
         <h1>PM Interviews Against Humanity</h1>
         <p>Inspired by the first 200 white cards from Cards Against Humanity&trade;</p>
-        <button>Gimme More Questions!</button>
+        <button onClick={()=>window.location.reload(true)}>Gimme More Questions!</button>
         <div className='question'>
           <h2>Generic Interview Question</h2>
           <p>{`Design ${this.state.product} for ${this.state.customer}`}.</p>
