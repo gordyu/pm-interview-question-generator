@@ -17,9 +17,13 @@ h2 {
 button {
   background-color: #5cb85c;
   border: none;
-  border-radius: 2px;
+  border-color: black;
+  border-width: 2px;
+  border-radius: 4px;
   font-size: 18px;
   font-weight: bold;
+  margin: 15px;
+  padding: 8px;
   color: white;
 }
 
@@ -28,7 +32,7 @@ button {
   border-style: solid;
   border-width: 2px;
   border-radius: 10px;
-  margin: 20px;
+  margin: 15px;
   padding: 2px;
   color: black;
 }

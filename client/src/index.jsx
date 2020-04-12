@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import regeneratorRuntime from "regenerator-runtime"; //enables async. Do not remove.
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAmazon, faFacebook, faMicrosoft, faGoogle } from '@fortawesome/free-brands-svg-icons';
 
 class Home extends React.Component {
   constructor(props) {
@@ -15,7 +17,6 @@ class Home extends React.Component {
     const res = await fetch(`http://localhost:5000/random`)
       .then(res => res.json())
       .then(res => {
-        //console.log('Got this from the server', res);
         const madlibs = res;
         this.setState( {product: madlibs[0]} );
         this.setState( {customer: madlibs[1]} );
@@ -26,7 +27,6 @@ class Home extends React.Component {
         this.setState( {facebookPercent: madlibs[6]} );
         this.setState( {facebookPerson: madlibs[7]} );
         this.setState( {microsoftPerson: madlibs[8]} );
-        //console.log('state is now', this.state);
       })
   }
 
@@ -37,24 +37,24 @@ class Home extends React.Component {
         <p>Inspired by the first 200 white cards from Cards Against Humanity&trade;</p>
         <button>Gimme More Questions!</button>
         <div className='question'>
-          <h2>Universal PM Interview Question</h2>
+          <h2>Generic Interview Question</h2>
           <p>{`Design ${this.state.product} for ${this.state.customer}`}.</p>
         </div>
         <div className='question'>
-          <h2>Amazon Interview Question</h2>
+          <h2><FontAwesomeIcon icon={faAmazon} />{` Amazon Interview Question`}</h2>
           <p>{`Tell me about a time when you were ${this.state.amazon}.`}</p>
         </div>
         <div className='question'>
-          <h2>Facebook Interview Question</h2>
+          <h2><FontAwesomeIcon icon={faFacebook} />{` Facebook Interview Question`}</h2>
           <p>{`Rates for ${this.state.facebook} are down ${this.state.facebookPercent}%.`}</p>
           <p>{`How would you explain this to ${this.state.facebookPerson}?`}</p>
         </div>
         <div className='question'>
-          <h2>Microsoft Interview Question</h2>
+          <h2><FontAwesomeIcon icon={faMicrosoft} />{` Microsoft Interview Question`}</h2>
           <p>{`Explain ${this.state.microsoft} to ${this.state.microsoftPerson}.`}</p>
         </div>
         <div className='question'>
-          <h2>Google Interview Question</h2>
+          <h2><FontAwesomeIcon icon={faGoogle} />{` Google Interview Question`}</h2>
           <p>{`Solve ${this.state.google}.`}</p>
         </div>
       </div>

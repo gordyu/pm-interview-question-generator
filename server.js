@@ -7,8 +7,8 @@ const data = {
   "customer":["flightless birds","amputees","former President George W. Bush","the Rev. Dr. Martin Luther King, Jr","the Pope","Aaron Burr","elderly Japanese men","the terrorists","William Shatner","Nickelback","Tom Cruise","the profoundly handicapped","Arnold Schwarzenegger","goblins","a falcon with a cap on its head","the invisible man","Sean Penn","heartwarming orphans","men","historically black colleges","Vikings","the Underground Railroad","my humps","geese","the South","Count Chocula","skeletor","Michael Jackson","the Chinese gymnastics team","Dick Cheney","white people","sperm whales","a sassy black woman","the KKK","Gandhi","Christopher Walken","a tiny horse","Genghis Khan","the token minority","RoboCop","Keanu Reeves","flesh-eating bacteria","poor people","Britney Spears at 55","Jewish fraternities","Ronald Reagan","Hulk Hogan","the hardworking Mexican","Natalie Portman","God","Sean Connery","homeless people","Darth Vader","guys who don't call","the milk man","Robert Downey, Jr"],
   "amazon":["doing the wrong thing","concealing a boner","being marginalized","cuddling","laying an egg","praying the gay away","cheating in the Special Olympics","bingeing and purging","making a pouty face","dying","pretending to care","being a dick to children","sniffing glue","eating all of the cookies before the AIDS bake-sale","sharing needles","farting and walking away","leaving an awkward voicemail","teaching a robot to love","scrubbing under the folds","whipping it out","waiting 'til marriage","feeding Rosie O'Donnell","taking off your shirt","pooping back and forth","being a motherfucking sorcerer","pulling out","waking up half-naked in a Denny's parking lot","eating the last known bison","dropping a chandelier on your enemies and riding the rope up","licking things to claim them as your own"],
   "facebook":["coat hanger abortions","the violation of our most basic human rights","self-loathing","fingering","ethnic cleansing","heteronormativity","object permanence","foreskin","dying of dysentery","necrophilia","spontaneous human combustion","penis envy","panda sex","masturbation","natural selection","take-backsies","drinking alone","giving 110%","fiery poops","passive-agression","vehicular manslaughter","scalping"],
-  "google":["the Big Bang","fear itself","AIDS","land mines","old-people smell","the Rapture","the American Dream","the inevitable heat death of the universe","the folly of man","a time travel paradox","world peace"],
-  "microsoft":["man meat","autocannibalism","smegma","science","child diddling","the Jewish Question","figgy pudding","preteens","Toni Morrison's vagina","friction","picking up girls at the abortion clinic","daddy issues","testicular torsion","an Oedipus complex","illegal immigration"],
+  "google":["the Big Bang","fear itself","AIDS","land mines","old-people smell","the Rapture","the American Dream","Spotted Dick","the inevitable heat death of the universe","the folly of man","a time travel paradox","world peace"],
+  "microsoft":["man meat","autocannibalism","smegma","violence","poverty","the Jewish Question","perpetual motion","teen pregnancy","Toni Morrison's vagina","friction","picking up girls at the abortion clinic","daddy issues","testicular torsion","an Oedipus complex","illegal immigration"],
   "facebookPercent":[10,15,20,25,30,35,40,45,50],
   "facebookPerson":["Mark Zuckerberg","Sheryl Sandberg","Dustin Moskovitz","Peter Thiel","Chamath Palihapitiya"],
   "microsoftPerson":["a 7-year-old child","my grandmother","a Medieval peasant","a death row inmate","the office cleaning lady"]
@@ -30,11 +30,8 @@ app.get('/random', function(req, res) {
   let terms = []; 
   let i = 0;
   for (let key in data) {
-      //console.log('searching', data[key]);
       i = (Math.floor(Math.random() * (data[key].length)));
       terms.push(data[key][i]);
-      //console.log('term is', data[key][i]);
   };
-  //console.log('Sending these terms to client', terms);
   res.send(terms);
 });
