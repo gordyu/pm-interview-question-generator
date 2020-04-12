@@ -16,7 +16,7 @@ class Home extends React.Component {
     res = await fetch(`http://localhost:5000/random`)
       .then(res => res.json())
       .then(res => {
-        console.log('Got this from the server', res);
+        //console.log('Got this from the server', res);
         const madlibs = res;
         this.setState( {product: madlibs[0]} );
         this.setState( {customer: madlibs[1]} );
@@ -27,7 +27,7 @@ class Home extends React.Component {
         this.setState( {facebookPercent: madlibs[6]} );
         this.setState( {facebookPerson: madlibs[7]} );
         this.setState( {microsoftPerson: madlibs[8]} );
-        console.log('state is now', this.state);
+        //console.log('state is now', this.state);
       })
   }
 

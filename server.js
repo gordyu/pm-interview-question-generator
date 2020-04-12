@@ -35,6 +35,6 @@ app.get('/random', function(req, res) {
       terms.push(data[key][i]);
       //console.log('term is', data[key][i]);
   };
-  console.log('Sending these terms to client', terms);
+  //console.log('Sending these terms to client', terms);
   res.send(terms);
 });
