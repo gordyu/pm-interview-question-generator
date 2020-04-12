@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import regeneratorRuntime from "regenerator-runtime"; //enables async. Do not remove.
+let res;
 
 class Home extends React.Component {
   constructor(props) {
@@ -12,11 +13,22 @@ class Home extends React.Component {
   }
 
   async componentDidMount() {
-    console.log('component did mount');
-    const res = await fetch(`http://localhost:5000/`);
-    console.log('res is', res);
-    //const json = await res.json();
-    //console.log('json is', json);
+    res = await fetch(`http://localhost:5000/random`)
+      .then(res => res.json())
+      .then(res => {
+        console.log('Got this from the server', res);
+        const madlibs = res;
+        this.setState( {product: madlibs[0]} );
+        this.setState( {customer: madlibs[1]} );
+        this.setState( {amazon: madlibs[2]} );
+        this.setState( {facebook: madlibs[3]} );
+        this.setState( {microsoft: madlibs[4]} );
+        this.setState( {google: madlibs[5]} );
+        this.setState( {facebookPercent: madlibs[6]} );
+        this.setState( {facebookPerson: madlibs[7]} );
+        this.setState( {microsoftPerson: madlibs[8]} );
+        console.log('state is now', this.state);
+      })
   }
 
   render() {
