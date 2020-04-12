@@ -1,3 +1,3 @@
-# AWIP 2.0
+# PM Interviews Against Humanity
 
-Try reading the package.json.
+App generates program manager interview questions typical of large tech companies by using the first 200 Cards Against Humanity cards.
