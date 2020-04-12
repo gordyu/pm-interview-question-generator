@@ -25,8 +25,7 @@ app.listen(port, function() {
   console.log(`PM Interviews Against Humanity is listening on port ${port}`);
 });
 
-// GET home page.
-app.get('*', function(req, res) {
+app.get('/', function(req, res) {
   // redeclare vars if they have data already
   let terms = []; 
   let i = 0;
@@ -36,6 +35,6 @@ app.get('*', function(req, res) {
       terms.push(data[key][i]);
       console.log('term is', data[key][i]);
   };
-  console.log('Sending these terms', terms);
-  res.status(200).send(terms);
+  console.log('Sending these terms to client', terms);
+  res.send(terms);
 });

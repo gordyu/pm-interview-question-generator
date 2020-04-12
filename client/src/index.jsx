@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import regeneratorRuntime from "regenerator-runtime"; //enables async
+import regeneratorRuntime from "regenerator-runtime"; //enables async. Do not remove.
 
 class Home extends React.Component {
   constructor(props) {
@@ -8,37 +8,42 @@ class Home extends React.Component {
     this.state = { 
       product: '', customer: '', amazon: '', facebook: '', microsoft: '', google: '',
       facebookPercent: '', facebookPerson: '', microsoftPerson: ''
-      }; 
+    }; 
   }
 
   async componentDidMount() {
-    const res = await fetch("http://localhost:5000/");
-    this.setState({ product: res[0] });
-    this.setState({ customer: res[1] });
-    this.setState({ amazon: res[2] });
-    this.setState({ facebook: res[3] });
-    this.setState({ microsoft: res[4] });
-    this.setState({ google: res[5] });
-    this.setState({ facebookPercent: res[6] });
-    this.setState({ facebookPerson: res[7] });
-    this.setState({ microsoftPerson: res[8] });
+    console.log('component did mount');
+    const res = await fetch(`http://localhost:5000/`);
+    console.log('res is', res);
+    //const json = await res.json();
+    //console.log('json is', json);
   }
 
   render() {
     return (
       <div>
         <h1>PM Interviews Against Humanity</h1>
-        <p>Using the first 200 Cards Against Humanity White Cards</p>
-        <h2>Universal PM Interview Question</h2>
-        <p>{`Design a ${this.state.product} for ${this.state.customer}`}.</p>
-        <h2>Amazon Interview Quesiton</h2>
-        <p>{`Tell me about a time when you ${this.state.amazon}.`}</p>
-        <h2>Facebook Interview Question</h2>
-        <p>{`Usage of ${this.state.facebook} is down ${this.state.facebookPercent}%. How would you explain this to Mark Zuckerberg?`}</p>
-        <h2>Microsoft Interview Question</h2>
-        <p>{`Explain ${this.state.microsoft} to ${this.state.microsoftPerson}.`}</p>
-        <h2>Google Interview Question</h2>
-        <p>{`Solve ${this.state.google}.`}</p>
+        <p>Using the first 200  white cards from Cards Against Humanity&trade;</p>
+        <div>
+          <h2>Universal PM Interview Question</h2>
+          <p>{`Design the ${this.state.product} for ${this.state.customer}`}.</p>
+        </div>
+        <div>
+          <h2>Amazon Interview Quesiton</h2>
+          <p>{`Tell me about a time when you ${this.state.amazon}.`}</p>
+        </div>
+        <div>
+          <h2>Facebook Interview Question</h2>
+          <p>{`Usage of ${this.state.facebook} is down ${this.state.facebookPercent}%. How would you explain this to Mark Zuckerberg?`}</p>
+        </div>
+        <div>
+          <h2>Microsoft Interview Question</h2>
+          <p>{`Explain ${this.state.microsoft} to ${this.state.microsoftPerson}.`}</p>
+        </div>
+        <div>
+          <h2>Google Interview Question</h2>
+          <p>{`Solve ${this.state.google}.`}</p>
+        </div>
         <button>Again!</button>
       </div>
     );

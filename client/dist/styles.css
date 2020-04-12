@@ -2,6 +2,7 @@ body {
   font-family: "Helvetica Nue", Helvetica, sans-serif;
   color: white !important;
   background-color: black !important;
+  text-align: center !important;
 }
 
 h2 {
@@ -21,22 +22,8 @@ h2 b {
   color: white;
 }
 
-a {
-  color: #0073bb !important;
-}
-
-a:hover {
-  color: #0073bb !important;
-  text-decoration: underline !important;
-}
-
 #horizontally_centered {
   display: 'flex';
   justify-content:'center'; 
   align-items:'center';
-}
-
-.carousel-control-next,
-.carousel-control-prev {
-    filter: invert(100%) !important;
 }
