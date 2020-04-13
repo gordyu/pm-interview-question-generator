@@ -4,8 +4,9 @@
   "description": "pm-interviews-against-humanity",
   "main": "server.js",
   "scripts": {
-    "build": "webpack -d --watch",
+    "build-dev": "webpack -d --watch",
     "start-dev": "nodemon server.js",
+    "build": "webpack",
     "start": "node server.js"
   },
   "author": "Gordon Yu",
