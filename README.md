@@ -1,3 +1,5 @@
 # PM Interviews Against Humanity
 
-App generates program manager interview questions typical of large tech companies by using the first 200 Cards Against Humanity cards.
+https://pm-interviews-against-humanity.herokuapp.com/
+
+App generates program manager interview questions typical of large tech companies by use of phrases from the first 200 white cards from Cards Against Humanity.
