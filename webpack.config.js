@@ -9,7 +9,7 @@ module.exports = {
     filename: 'bundle.js',
     path: DIST_DIR
   },
-  plugins: [ new Dotenv() ],
+  plugins: [  ],
   module : {
     rules : [
       {
