@@ -1,7 +1,7 @@
 {
-  "name": "pm-interviews-against-humanity",
+  "name": "pm-interview-question-generator",
   "version": "0.0.1",
-  "description": "pm-interviews-against-humanity",
+  "description": "pm-interview-question-generator",
   "main": "server.js",
   "scripts": {
     "build-dev": "webpack -d --watch",
