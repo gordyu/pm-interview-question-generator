@@ -4,10 +4,6 @@ var DIST_DIR = path.join(__dirname, '/client/dist');
 
 module.exports = {
   entry: `${SRC_DIR}/index.jsx`,
-  output: {
-    filename: 'bundle.js',
-    path: DIST_DIR
-  },
   plugins: [  ],
   module : {
     rules : [
@@ -18,11 +14,11 @@ module.exports = {
         query: {
           presets: ['@babel/preset-react', '@babel/preset-env']
         }
-      },  
-      {
-        test: /\.css$/i,
-        use: ['style-loader', 'css-loader']
       }
     ]
+  },
+  output: {
+    filename: 'bundle.js',
+    path: DIST_DIR
   }
 };

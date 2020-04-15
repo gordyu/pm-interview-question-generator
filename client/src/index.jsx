@@ -9,13 +9,12 @@ class Home extends React.Component {
     super(props);
     this.state = { 
       product: '', customer: '', amazon: '', facebook: '', microsoft: '', google: '',
-      facebookPercent: '', facebookPerson: '', microsoftPerson: '',
-      ready: true
+      facebookPercent: '', facebookPerson: '', microsoftPerson: ''
     }; 
   }
 
   async componentDidMount() {
-    const res = await fetch(`http://localhost:5000/random`)
+    const res = await fetch(`http://localhost:8583/random`)
       .then(res => res.json())
       .then(res => {
         const madlibs = res;
@@ -43,7 +42,7 @@ class Home extends React.Component {
         </div>
         <div className='question'>
           <h2><FontAwesomeIcon icon={faAmazon} />{` Amazon Interview Question`}</h2>
-          <p>{`Tell me about a time when you were ${this.state.amazon}.`}</p>
+          <p>{`Tell me about a time when you demonstrated the leadership principle ${this.state.amazon}.`}</p>
         </div>
         <div className='question'>
           <h2><FontAwesomeIcon icon={faFacebook} />{` Facebook Interview Question`}</h2>
@@ -56,7 +55,7 @@ class Home extends React.Component {
         </div>
         <div className='question'>
           <h2><FontAwesomeIcon icon={faGoogle} />{` Google Interview Question`}</h2>
-          <p>{`Solve ${this.state.google}.`}</p>
+          <p>{`Solve ${this.state.google} San Francisco.`}</p>
         </div>
       </div>
     );
