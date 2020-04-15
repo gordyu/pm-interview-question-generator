@@ -14,7 +14,7 @@ class Home extends React.Component {
   }
 
   async componentDidMount() {
-    const res = await fetch(`http://localhost:8583/random`)
+    const res = await fetch(`/random`)
       .then(res => res.json())
       .then(res => {
         const madlibs = res;
