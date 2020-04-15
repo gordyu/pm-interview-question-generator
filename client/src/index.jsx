@@ -34,7 +34,7 @@ class Home extends React.Component {
     return (
       <div>
         <h1>PM Interview Question Generator</h1>
-        <p>Inspired by Sister Site PM Interviews Against Humanity</p>
+        <p>Inspired by sister site PM Interviews Against Humanity</p>
         <button autoFocus onClick={()=>window.location.reload(true)}>Gimme More Questions!</button>
         <div className='question'>
           <h2>Generic Interview Question</h2>
