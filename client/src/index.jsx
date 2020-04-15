@@ -33,9 +33,9 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-        <h1>PM Interviews Against Humanity</h1>
-        <p>Inspired by the first 200 white cards from Cards Against Humanity&trade;</p>
-        <button onClick={()=>window.location.reload(true)}>Gimme More Questions!</button>
+        <h1>PM Interview Question Generator</h1>
+        <p>Inspired by Sister Site PM Interviews Against Humanity</p>
+        <button autoFocus onClick={()=>window.location.reload(true)}>Gimme More Questions!</button>
         <div className='question'>
           <h2>Generic Interview Question</h2>
           <p>{`Design ${this.state.product} for ${this.state.customer}`}.</p>
