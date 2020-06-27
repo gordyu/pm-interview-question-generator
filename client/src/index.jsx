@@ -2,14 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom";
 import regeneratorRuntime from "regenerator-runtime"; //enables async. Do not remove.
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAmazon, faFacebook, faMicrosoft, faGoogle } from '@fortawesome/free-brands-svg-icons';
+import { faAmazon, faFacebook, faGoogle, faMicrosoft } from '@fortawesome/free-brands-svg-icons';
+import { faUserTie, faMobileAlt, faChessQueen, faChartLine, faCalculator } from '@fortawesome/free-solid-svg-icons';
 
 class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = { 
-      product: '', customer: '', amazon: '', facebook: '', microsoft: '', google: '',
-      facebookPercent: '', facebookPerson: '', microsoftPerson: ''
+      behavioral: '', design: '', strategy: '', execution: '', estimation: ''
     }; 
   }
 
@@ -18,45 +18,41 @@ class Home extends React.Component {
       .then(res => res.json())
       .then(res => {
         const madlibs = res;
-        this.setState( {product: madlibs[0]} );
-        this.setState( {customer: madlibs[1]} );
-        this.setState( {amazon: madlibs[2]} );
-        this.setState( {facebook: madlibs[3]} );
-        this.setState( {microsoft: madlibs[4]} );
-        this.setState( {google: madlibs[5]} );
-        this.setState( {facebookPercent: madlibs[6]} );
-        this.setState( {facebookPerson: madlibs[7]} );
-        this.setState( {microsoftPerson: madlibs[8]} );
+        this.setState( {behavioral: madlibs[0]} );
+        this.setState( {design: madlibs[1]} );
+        this.setState( {strategy: madlibs[2]} );
+        this.setState( {execution: madlibs[3]} );
+        this.setState( {estimation: madlibs[4]} );
       })
   }
 
   render() {
     return (
       <div>
-        <h1>PM Interview Question Generator</h1>
-        <p>Inspired by sister site PM Interviews Against Humanity</p>
-        <button autoFocus onClick={()=>window.location.reload(true)}>Gimme More Questions!</button>
+        <h1>AWIP's Real PM Interview Questions</h1>
+        <h1>Asked by <FontAwesomeIcon icon={faAmazon} /> , <FontAwesomeIcon icon={faFacebook} /> , <FontAwesomeIcon icon={faGoogle} /> , and <FontAwesomeIcon icon={faMicrosoft} /> .</h1>
+        <p>Be creative: alter companies, products, and other details to suit your needs!</p>
         <div className='question'>
-          <h2>Generic Interview Question</h2>
-          <p>{`Design ${this.state.product} for ${this.state.customer}`}.</p>
+          <h2><FontAwesomeIcon icon={faUserTie} />{` Behavioral (Leadership & Drive)`}</h2>
+          <p>{`${this.state.behavioral}`}</p>
         </div>
         <div className='question'>
-          <h2><FontAwesomeIcon icon={faAmazon} />{` Amazon Interview Question`}</h2>
-          <p>{`Tell me about a time when you demonstrated the leadership principle ${this.state.amazon}.`}</p>
+          <h2><FontAwesomeIcon icon={faMobileAlt} />{` Product Design (Product Sense)`}</h2>
+          <p>{`${this.state.design}`}</p>
         </div>
         <div className='question'>
-          <h2><FontAwesomeIcon icon={faFacebook} />{` Facebook Interview Question`}</h2>
-          <p>{`Rates for ${this.state.facebook} are down ${this.state.facebookPercent}%.`}</p>
-          <p>{`How would you explain this to ${this.state.facebookPerson}?`}</p>
+          <h2><FontAwesomeIcon icon={faChessQueen} />{` Strategy`}</h2>
+          <p>{`${this.state.strategy}`}</p>
         </div>
         <div className='question'>
-          <h2><FontAwesomeIcon icon={faMicrosoft} />{` Microsoft Interview Question`}</h2>
-          <p>{`Explain ${this.state.microsoft} to ${this.state.microsoftPerson}.`}</p>
+          <h2><FontAwesomeIcon icon={faChartLine} />{` Execution (Data Analysis)`}</h2>
+          <p>{`${this.state.execution}`}</p>
         </div>
         <div className='question'>
-          <h2><FontAwesomeIcon icon={faGoogle} />{` Google Interview Question`}</h2>
-          <p>{`Solve ${this.state.google} San Francisco.`}</p>
+          <h2><FontAwesomeIcon icon={faCalculator} />{` Estimation`}</h2>
+          <p>{`${this.state.estimation}`}</p>
         </div>
+        <button autoFocus onClick={()=>window.location.reload(true)}>Another Set of Questions, Please</button>
       </div>
     );
   }
