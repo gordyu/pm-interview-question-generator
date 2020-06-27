@@ -4,7 +4,7 @@
   "description": "pm-interview-question-generator",
   "main": "server.js",
   "scripts": {
-    "build-dev": "webpack-dev-server -d --watch",
+    "build-dev": "webpack-dev-server --open --config webpack.dev.js",
     "start-dev": "nodemon server.js",
     "build": "webpack --config webpack.prod.js",
     "start": "node server.js"
@@ -20,6 +20,7 @@
     "nodemon": "^2.0.3",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
