@@ -52,7 +52,7 @@ class Home extends React.Component {
           <h2><FontAwesomeIcon icon={faCalculator} />{` Estimation`}</h2>
           <p>{`${this.state.estimation}`}</p>
         </div>
-        <button autoFocus onClick={()=>window.location.reload(true)}>Another Set of Questions, Please</button>
+        <button>Another Set of Questions, Please</button>
       </div>
     );
   }
