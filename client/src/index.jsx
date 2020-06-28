@@ -29,8 +29,7 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-        <h1>AWIP's Real PM Interview Questions</h1>
-        <h1>Asked by <FontAwesomeIcon icon={faAmazon} /> , <FontAwesomeIcon icon={faFacebook} /> , <FontAwesomeIcon icon={faGoogle} /> , and <FontAwesomeIcon icon={faMicrosoft} /> .</h1>
+        <h1>AWIP's Real <FontAwesomeIcon icon={faAmazon} /> <FontAwesomeIcon icon={faFacebook} /> <FontAwesomeIcon icon={faGoogle} /> <FontAwesomeIcon icon={faMicrosoft} /> PM Interview Questions</h1>
         <p>Be creative: alter companies, products, and other details to suit your needs!</p>
         <div className='question'>
           <h2><FontAwesomeIcon icon={faUserTie} />{` Behavioral (Leadership & Drive)`}</h2>
@@ -52,7 +51,7 @@ class Home extends React.Component {
           <h2><FontAwesomeIcon icon={faCalculator} />{` Estimation`}</h2>
           <p>{`${this.state.estimation}`}</p>
         </div>
-        <button>Another Set of Questions, Please</button>
+        <button onClick={()=>window.location.reload(true)}>Another Set of Questions, Please</button>
       </div>
     );
   }
