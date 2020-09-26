@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import regeneratorRuntime from "regenerator-runtime"; //enables async. Do not remove.
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAmazon, faFacebook, faGoogle, faMicrosoft } from '@fortawesome/free-brands-svg-icons';
+import { faAmazon, faFacebook, faGoogle, faMicrosoft, faAws } from '@fortawesome/free-brands-svg-icons';
 import { faUserTie, faMobileAlt, faChessQueen, faChartLine, faCalculator } from '@fortawesome/free-solid-svg-icons';
 
 class Home extends React.Component {
@@ -30,6 +30,7 @@ class Home extends React.Component {
     return (
       <div>
         <h1>AWIP's Real <FontAwesomeIcon icon={faAmazon} /> <FontAwesomeIcon icon={faFacebook} /> <FontAwesomeIcon icon={faGoogle} /> <FontAwesomeIcon icon={faMicrosoft} /> PM Interview Questions</h1>
+        <p>A companion app for <a href="https://www.coursera.org/specializations/real-world-product-management">AWIP's Real World Product Management Specialization</a>, sponsored by <FontAwesomeIcon icon={faAws} />, available exclusively on Coursera.</p>
         <p>Be creative: alter companies, products, and other details to suit your needs!</p>
         <div className='question'>
           <h2><FontAwesomeIcon icon={faUserTie} />{` Behavioral (Leadership & Drive)`}</h2>
