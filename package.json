@@ -28,7 +28,7 @@
     "@fortawesome/free-brands-svg-icons": "^5.13.1",
     "@fortawesome/free-solid-svg-icons": "^5.13.1",
     "@fortawesome/react-fontawesome": "^0.1.11",
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "mongodb": "^3.5.9",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
